@@ -112,8 +112,8 @@ impl SwerveDriveKinematics {
             .solve(&module_state_matrix, 0.0)
             .unwrap();
         ChassisSpeeds::new(
-            *chassis_speeds_vector.get(0).unwrap(),
             *chassis_speeds_vector.get(1).unwrap(),
+            *chassis_speeds_vector.get(0).unwrap(),
             *chassis_speeds_vector.get(2).unwrap(),
         )
     }
