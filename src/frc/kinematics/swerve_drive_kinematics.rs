@@ -99,7 +99,7 @@ impl SwerveDriveKinematics {
             }
         }
     }
-    pub fn to_chassis_speeds(&self, module_states: [SwerveModuleState; 4]) -> ChassisSpeeds {
+    pub fn to_chassis_speeds(&self, module_states: &[SwerveModuleState; 4]) -> ChassisSpeeds {
         let mut module_state_matrix = nalgebra::DMatrix::<f64>::zeros(8, 1);
         for i in 0..4 {
             *module_state_matrix.get_mut((i * 2, 0)).unwrap() =
